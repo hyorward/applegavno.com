@@ -27,6 +27,7 @@ h1 {
 img{
     width: 70px;
     margin: 30px auto;
+    background: var(--tg-theme-bg-color);
 }
 
 p {
