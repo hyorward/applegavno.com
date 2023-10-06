@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Gavno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <h1>Купи Андроид. Отвернись от врагов родины!</h1>
+        <img src="https://www.pinclipart.com/picdir/big/208-2080424_for-instructions-on-enrolling-in-biometric-login-for.png">
+        <p>Apple - гавно. Андроид лучше!</p>
+        <p>Если вы тоже так считает, то это самое лучшее место для вас!</p>
+        <button id="buy">Купить</button>
+    </div>
+    <form id="form">
+        <input type="text" placeholder="Имя" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Телефон" id="user_phone">
+        <button id="order">Оформить</button>
+    </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById("buy");
+        let order = document.getElementById("order");
+
+        buy.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+        });
+
+        order.addEventListener("click", () => {
+            tg.close();
+        });
+    </script>
+</body>
+</html>
